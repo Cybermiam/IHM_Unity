@@ -15,6 +15,8 @@ public class AIController : MonoBehaviour
 
     public int bumpForce = 5;
 
+    public int lives = 3;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -26,6 +28,12 @@ public class AIController : MonoBehaviour
     void Update()
     {
         FollowPlayer();
+        if (transform.position.y < -2.5f)
+        {
+            transform.position = new Vector3(0, 4f, 0);
+            GetComponent<Rigidbody>().linearVelocity = Vector3.zero;
+            lives--;
+        }
     }
 
     void FollowPlayer(){
@@ -41,7 +49,7 @@ public class AIController : MonoBehaviour
     {
         if (collision.gameObject.name == "Ground"){
             touchingGrass = true;
-        } else if (collision.gameObject.name == "AISphere2")
+        } else if (collision.gameObject.name == "PlayerSphere")
         {
             Rigidbody playerSphereRb = collision.gameObject.GetComponent<Rigidbody>();
             if (playerSphereRb != null && playerSphereRb.linearVelocity.magnitude < GetComponent<Rigidbody>().linearVelocity.magnitude)

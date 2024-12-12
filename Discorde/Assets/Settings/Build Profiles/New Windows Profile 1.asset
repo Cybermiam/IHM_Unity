@@ -26,6 +26,8 @@ MonoBehaviour:
     m_path: Assets/Scenes/QuitPrompt.unity
   - m_enabled: 1
     m_path: Assets/Scenes/Game.unity
+  - m_enabled: 1
+    m_path: Assets/Scenes/Battle.unity
   m_ScriptingDefines: []
   m_PlayerSettingsYaml:
     m_Settings: []

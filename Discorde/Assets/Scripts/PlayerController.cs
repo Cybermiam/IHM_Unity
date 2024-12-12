@@ -10,12 +10,15 @@ public class PlayerController : MonoBehaviour
 
     public int bumpForce = 5;
 
+    public int lives = 3;
+
     public Boolean touchingGrass = false;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         this.speed = 1500f;
         this.jumpForce = 5;
+
     }
 
     // Update is called once per frame
@@ -33,6 +36,13 @@ public class PlayerController : MonoBehaviour
         {   
             touchingGrass = false;
             rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
+        }
+
+        if (transform.position.y < -2.5f)
+        {
+            transform.position = new Vector3(0, 4f, 0);
+            rb.linearVelocity = Vector3.zero;
+            lives--;
         }
     }
 
