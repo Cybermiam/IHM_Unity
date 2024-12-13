@@ -5,5 +5,5 @@ Project for the IHM course in M2 IC
 Le code source se trouve dans le dossier Assets/Scripts, ces scripts régissent l'ensemble des actions possibles dans l'application.
 
 ## Documents
-Les documents se trouvent à l'adresse suivante : (Documents)[https://drive.google.com/drive/folders/1C-3FnyAbJoJ9LWX5C5URusI0DJfgApvU]
+Les documents se trouvent à l'adresse suivante : [Documents](https://drive.google.com/drive/folders/1C-3FnyAbJoJ9LWX5C5URusI0DJfgApvU)
 Le lien renvoie vers un documents avec plusieurs onglets pour les différents rendus.
