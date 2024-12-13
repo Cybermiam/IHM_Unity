@@ -1,27 +1,27 @@
 using System;
 using UnityEngine;
 
-public class AIController : MonoBehaviour
+public class AIController1 : MonoBehaviour
 {
 
     
 
-    public float speed = 1f;
-    public int jumpForce = 50;
+    public float speed = 10f;
+    public int jumpForce = 500;
     
     public Boolean touchingGrass = true;
 
-    public GameObject player;
+    public GameObject adversaire;
 
-    public int bumpForce = 50;
+    public int bumpForce = 500;
 
-    public int lives = 3;
+    public int lives = 1;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        this.speed = 12000f;
-        this.jumpForce = 50;
+        this.speed = 120000f;
+        this.jumpForce = 500;
     }
 
     // Update is called once per frame
@@ -37,7 +37,7 @@ public class AIController : MonoBehaviour
     }
 
     void FollowPlayer(){
-        Vector3 playerPosition = player.transform.position;
+        Vector3 playerPosition = adversaire.transform.position;
         Vector3 aiPosition = transform.position;
         Vector3 direction = playerPosition - aiPosition;
         direction.Normalize();
@@ -49,16 +49,16 @@ public class AIController : MonoBehaviour
     {
         if (collision.gameObject.name == "Ground"){
             touchingGrass = true;
-        } else if (collision.gameObject.name == "PlayerSphere")
+        } else if (collision.gameObject.name == "AISphere2")
         {
             Rigidbody playerSphereRb = collision.gameObject.GetComponent<Rigidbody>();
             if (playerSphereRb != null && playerSphereRb.linearVelocity.magnitude < GetComponent<Rigidbody>().linearVelocity.magnitude)
             {
                 
-                bumpForce += 100;
+                bumpForce += 1000;
                 transform.localScale *= 1.1f;
             } else {
-                this.speed += 5000f;
+                this.speed += 50000f;
             }
             playerSphereRb.AddForce(-collision.contacts[0].normal * bumpForce, ForceMode.Impulse);
         }

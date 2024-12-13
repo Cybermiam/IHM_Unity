@@ -5,10 +5,10 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
 
-    public float speed = 0.1f;
-    public int jumpForce = 5;
+    public float speed = 1f;
+    public int jumpForce = 50;
 
-    public int bumpForce = 5;
+    public int bumpForce = 50;
 
     public int lives = 3;
 
@@ -16,8 +16,8 @@ public class PlayerController : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        this.speed = 1500f;
-        this.jumpForce = 5;
+        this.speed = 15000f;
+        this.jumpForce = 50;
 
     }
 
@@ -56,10 +56,10 @@ public class PlayerController : MonoBehaviour
             if (aiSphereRb != null && aiSphereRb.linearVelocity.magnitude < GetComponent<Rigidbody>().linearVelocity.magnitude)
             {
                 
-                bumpForce += 10;
+                bumpForce += 100;
                 transform.localScale *= 1.1f;
             } else{
-                this.speed += 500f;
+                this.speed += 5000f;
                 
             }
             aiSphereRb.AddForce(-collision.contacts[0].normal * bumpForce, ForceMode.Impulse);

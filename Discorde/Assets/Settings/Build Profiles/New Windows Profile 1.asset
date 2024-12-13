@@ -25,9 +25,21 @@ MonoBehaviour:
   - m_enabled: 1
     m_path: Assets/Scenes/QuitPrompt.unity
   - m_enabled: 1
+    m_path: Assets/Scenes/GameOverPlayerWon.unity
+  - m_enabled: 1
+    m_path: Assets/Scenes/GameOverWatch.unity
+  - m_enabled: 1
+    m_path: Assets/Scenes/GameAfterWin.unity
+  - m_enabled: 1
     m_path: Assets/Scenes/Game.unity
   - m_enabled: 1
+    m_path: Assets/Scenes/Battle2.unity
+  - m_enabled: 1
+    m_path: Assets/Scenes/MainMenuAfterLoss.unity
+  - m_enabled: 1
     m_path: Assets/Scenes/Battle.unity
+  - m_enabled: 1
+    m_path: Assets/Scenes/GameOverPlayerLost.unity
   m_ScriptingDefines: []
   m_PlayerSettingsYaml:
     m_Settings: []
